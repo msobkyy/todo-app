@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header";
+import Todo from "./components/Todo/Todo";
+import { Toaster } from 'react-hot-toast';
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex flex-col h-screen justify-between">
+      <Header />
+      <div className="flex justify-center items-center p-4 w-full mb-auto ">
+        <Todo />
+      </div>
+      <Footer/>
+      <Toaster  position="bottom-right" />
     </div>
   );
 }
