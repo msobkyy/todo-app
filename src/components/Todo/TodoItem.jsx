@@ -36,7 +36,7 @@ function TodoItem({ todo, updateId }) {
   return (
     <motion.div
       variants={child}
-      className=" bg-slate-100 text-gray-800 p-4 rounded-xl flex justify-between items-center shadow-md"
+      className=" bg-slate-100 dark:bg-zinc-700 text-gray-800 p-4 rounded-xl flex justify-between items-center shadow-md"
     >
         <div className="flex justify-center items-center">
           <CheckBox
@@ -46,8 +46,8 @@ function TodoItem({ todo, updateId }) {
           <div>
             <p
               className={`${
-                todo.status === "completed" ? "line-through text-gray-400" : ""
-              } text-gray-600 text-lg`}
+                todo.status === "completed" ? "line-through text-gray-400 opacity-50" : ""
+              } text-gray-600 text-lg  dark:text-white`}
             >
               {todo.title}
             </p>
@@ -58,16 +58,16 @@ function TodoItem({ todo, updateId }) {
           <div
             role="button"
             onClick={deleteHandler}
-            className="bg-gray-200 w-8 h-8 rounded-md flex justify-center items-center shadow-sm"
+            className="bg-gray-200  dark:bg-zinc-600 w-8 h-8 rounded-md flex justify-center items-center shadow-sm"
           >
             <FaTrashAlt size="20" className="text-red-400" />
           </div>
           <div
             role="button"
             onClick={updateHandler}
-            className="bg-gray-200 w-8 h-8 rounded-md flex justify-center items-center shadow-sm  "
+            className="bg-gray-200  dark:bg-zinc-600 w-8 h-8 rounded-md flex justify-center items-center shadow-sm  "
           >
-            <FaEdit size="20" className="text-gray-500" />
+            <FaEdit size="20" className="text-gray-500 dark:text-white" />
           </div>
         </div>
     </motion.div>

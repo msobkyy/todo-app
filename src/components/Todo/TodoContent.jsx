@@ -54,7 +54,7 @@ function TodoContent() {
         variants={container}
         initial="hidden"
         animate="visible"
-        className="p-4 rounded-lg mt-6 bg-gray-200 space-y-4"
+        className="p-4 rounded-lg mt-6 bg-gray-200 space-y-4 dark:bg-secondary-dark"
       >
         {sortedTodolist && sortedTodolist.length > 0 ? (
           sortedTodolist.map((todo) => (
@@ -63,7 +63,7 @@ function TodoContent() {
         ) : (
           <motion.div
             variants={child}
-            className="h-40 whitespace-nowrap bg-slate-100 text-gray-800 p-4 rounded-xl flex justify-center items-center shadow-md text-md sm:text-  xl"
+            className="h-40 whitespace-nowrap bg-slate-100 dark:bg-zinc-700 text-gray-800 dark:text-white p-4 rounded-xl flex justify-center items-center shadow-md text-md sm:text-  xl"
           >
             No Todos <RiEmotionHappyLine className="mx-2" /> add task to view
             here{" "}

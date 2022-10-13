@@ -103,7 +103,7 @@ function Modal({ type, isOpen, setModal, todo }) {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="m-3 p-5 w-full max-w-lg bg-gray-200 rounded-xl relative shadow-lg"
+            className="m-3 p-5 w-full max-w-lg bg-gray-200 dark:bg-primary-dark rounded-xl relative shadow-lg  dark:border-2 dark:border-secondary-dark"
           >
             <motion.div
               onClick={() => setModal()}
@@ -111,20 +111,23 @@ function Modal({ type, isOpen, setModal, todo }) {
               animate={{ top: -50, opacity: 1 }}
               exit={{ top: 0, opacity: 0 }}
               role="button"
-              className="absolute top-[-50px] right-0 bg-white hover:bg-red-400 hover:text-white p-2 rounded-lg flex justify-center items-center"
+              className="absolute top-[-50px] right-0 bg-white dark:bg-primary-dark dark:border-2 dark:border-secondary-dark dark:hover:text-secondary-dark dark:text-white hover:bg-red-400 hover:text-white p-2 rounded-lg flex justify-center items-center"
             >
               <XMarkIcon className="h-6 w-6" />
             </motion.div>
             <form onSubmit={(e) => submitHandler(e)}>
-              <h1 className=" text-gray-500 font-semibold text-xl mb-4">
+              <h1 className=" text-gray-500 dark:text-white font-semibold text-xl mb-4">
                 {typeRender().title}
               </h1>
               <div className="mb-3">
-                <label className="block mb-1  text-gray-500" htmlFor="title">
+                <label
+                  className="block mb-1  dark:text-white text-gray-500"
+                  htmlFor="title"
+                >
                   Title
                 </label>
                 <input
-                  className=" w-full block px-3 py-2 rounded-md shadow-sm"
+                  className=" w-full block px-3 py-2 rounded-md shadow-sm dark:bg-secondary-dark  dark:text-white"
                   id="title"
                   placeholder="Task Title"
                   ref={titleRef}
@@ -132,11 +135,14 @@ function Modal({ type, isOpen, setModal, todo }) {
                 />
               </div>
               <div className="mb-3">
-                <label className="block mb-1 text-gray-500  " htmlFor="status">
+                <label
+                  className="block mb-1 text-gray-500  dark:text-white "
+                  htmlFor="status"
+                >
                   Status
                 </label>
                 <select
-                  className=" w-full block px-3 py-2 rounded-md shadow-sm"
+                  className=" w-full block px-3 py-2 rounded-md shadow-sm  dark:bg-secondary-dark dark:text-white"
                   id="status"
                   ref={statusRef}
                   defaultValue={todo?.status}
@@ -146,12 +152,16 @@ function Modal({ type, isOpen, setModal, todo }) {
                 </select>
               </div>
               <div className="mt-10 flex space-x-3">
-                <button className=" bg-violet-500 px-5 py-2 rounded-lg text-white hover:bg-violet-600">
+                <button
+                  type="submit"
+                  className=" bg-violet-500 px-5 py-2 rounded-lg text-white hover:bg-violet-600"
+                >
                   {typeRender().title}
                 </button>
                 <button
-                  onClick={() => setModal()}
-                  className=" bg-gray-300 px-5 py-2 rounded-lg text-gray-600 hover:bg-gray-400"
+                  type="button"
+                  onClick={setModal}
+                  className=" dark:bg-secondary-dark dark:text-white bg-gray-300 px-5 py-2 rounded-lg text-gray-600 hover:bg-gray-400"
                 >
                   Cancel
                 </button>
