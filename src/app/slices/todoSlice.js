@@ -11,7 +11,7 @@ const getInitialTodos = () => {
 
 const initialValue = {
   filterStatus: "all",
-  theme: "",
+  theme: localStorage.theme || "",
   todolist: getInitialTodos(),
 };
 
